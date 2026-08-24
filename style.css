@@ -1,0 +1,545 @@
+/* ================================================================
+   千葉大学吹奏楽団 公式サイト — 共通スタイルシート style.css
+   【色を変えたいとき】
+     ネイビー → #1a2a5e を検索して置換
+     ゴールド → #c9a227 を検索して置換
+   ================================================================ */
+
+/* --- Google Fonts インポート（ネット接続が必要） --- */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap');/*グーグルフォントのサイトから「Noto Sans JP」というフォントを取ってきている*/
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Decol&display=swap');/*グーグルフォントのサイトから「Kaisei Decol」というフォントを取ってきている*/
+@import url('https://fonts.googleapis.com/css2?family=Zen+Antique+Soft&family=Zen+Old+Mincho&display=swap');/*グーグルフォントのサイトから「Zen Antique Soft」「Zen Old Mincho」というフォントを取ってきている*/
+
+/* ----------------------------------------------------------------
+   リセット
+   ---------------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/*すべての要素のpaddingとborderをwidthの内側に含め、デフォルトの余白をゼロにするリセット*/
+html { scroll-behavior: smooth; }
+/*ページ内リンクをクリックしたとき、ジャンプせずなめらかにスクロールする*/
+
+body {/*ページ全体の基本スタイル。フッターを常に最下部に保つための設定も含む*/
+  display: flex;/*bodyをFlexboxにして子要素（header・main・footer）を縦に並べる*/
+  flex-direction: column;/*子要素を縦方向（上から下）に並べる*/
+  min-height: 100vh;/*bodyの最小の高さを画面の高さ100%にする。コンテンツが少なくてもフッターが浮かない*/
+  font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;/*フォントの優先順位リスト。左から順に試して使えるものを使う*/
+  font-size: 15px;/*全体の基本文字サイズ。他の要素はここを基準に相対的に大きさが決まる*/
+  line-height: 1.8;/*行間。文字サイズの1.8倍の間隔を空ける*/
+  color: #1a1a1a;/*全体の基本文字色（ほぼ黒）*/
+  background-color: #ffffff;/*ページ全体の背景色（白）*/
+}
+main { flex: 1; }/*mainエリアが余ったスペースを全部占有し、フッターを画面最下部に押し下げる*/
+img { display: block; max-width: 100%; height: auto; }
+/*画像をブロック要素にして余計な隙間をなくし、親要素より大きくならないようにする。高さは自動で縦横比を維持*/
+a   { text-decoration: none; color: inherit; }
+/*リンクのデフォルト下線を消し、文字色を親要素と同じにする*/
+ul  { list-style: none; }
+/*リストのデフォルトの点（・）を消す*/
+
+/* ----------------------------------------------------------------
+   共通レイアウト
+   ---------------------------------------------------------------- */
+.container {/*全ページ共通。コンテンツを中央に収める幅制限の箱*/
+  max-width: 960px;/*これ以上横に広がらない最大幅*/
+  margin: 0 auto;/*上下の余白0、左右autoで水平中央に配置*/
+  padding: 0 32px;/*左右に32pxの内側余白。画面端にコンテンツが張り付かないようにする*/
+}
+.page-content { padding: 52px 0 88px; }
+/*楽団紹介・年間行事・過去の演奏会・お問い合わせページのメインエリアの余白。上52px・左右0・下88px*/
+
+/* ----------------------------------------------------------------
+   共通ボタン
+   ---------------------------------------------------------------- */
+.btn {/*「過去の演奏会」「ホームに戻る」などのボタン共通スタイル*/
+  display: inline-block;/*文章の流れの中に置けるブロック要素。widthやpaddingが効くようになる*/
+  border: 1px solid #1a2a5e;/*ネイビーの1px実線の枠*/
+  color: #1a2a5e;/*ネイビーの文字色*/
+  background: #ffffff;/*白の背景*/
+  padding: 7px 22px;/*内側余白。上下7px・左右22px*/
+  font-size: 13px;/*文字サイズ*/
+  font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;/*フォント指定*/
+  cursor: pointer;/*カーソルを指マークにしてクリックできることを示す*/
+  letter-spacing: 0.04em;/*文字間隔を少し広げて読みやすくする*/
+  transition: background 0.2s, color 0.2s;/*ホバー時に背景色と文字色が0.2秒かけてなめらかに変わる*/
+}
+.btn:hover {/*ボタンにマウスを乗せたとき*/
+  background: #1a2a5e;/*背景をネイビーに変える*/
+  color: #ffffff;/*文字を白に変える*/
+}
+
+
+/* ================================================================
+   ヘッダー（全ページ共通）
+   ================================================================ */
+.site-nav {/*全ページ共通のナビゲーションバー全体*/
+  background-color: #1a2a5e;   /*ヘッダーの色*/
+  position: sticky;/*スクロールしても画面上部に固定される*/
+  top: 0;/*画面の一番上（0px）の位置に固定*/
+  z-index: 100;/*他の要素より手前に表示する。数字が大きいほど前面に出る*/
+}
+.site-nav .container {/*ナビバー内のロゴとリンクを左右に配置する箱*/
+  display: flex;/*子要素（ロゴとナビリンク）を横並びにする*/
+  align-items: center;/*縦方向の中央揃え。ロゴとリンクの高さが違っても中心が揃う*/
+  justify-content: space-between;/*左端にロゴ、右端にナビリンクを配置*/
+  padding-top: 14px;/*ナビバーの上の内側余白*/
+  padding-bottom: 14px;/*ナビバーの下の内側余白*/
+}
+
+/* ロゴ */
+.nav-logo {/*ヘッダー左側のロゴ画像＋テキストのまとまり*/
+  display: flex;/*画像とテキストを横並びにする*/
+  align-items: center;/*縦方向の中央揃え*/
+  gap: 10px;/*画像とテキストの間隔*/
+  color: #ffffff;/*テキストを白にする*/
+}
+.nav-logo img {/*ヘッダー左のロゴ画像*/
+  width: 44px;/*画像の横幅*/
+  height: 44px;/*画像の縦幅*/
+  object-fit: contain;/*縦横比を保ったまま枠に収める*/
+  flex-shrink: 0;/*Flexbox内で画像が縮まないようにする*/
+}
+.nav-logo-text {/*ロゴ横の「千葉大学吹奏楽団」と英語名のテキストエリア*/
+  display: flex;/*子要素（日本語名と英語名）を並べる*/
+  flex-direction: column;/*縦に並べる（日本語名が上、英語名が下）*/
+  line-height: 1.3;/*行間を狭めてコンパクトに見せる*/
+}
+.nav-logo-text .name-ja {/*ヘッダーの「千葉大学吹奏楽団」の文字*/
+  font-family: 'Zen Antique Soft', serif;/*フォント指定*/
+  font-size: 16px;/*文字サイズ*/
+  font-weight: 400;/*文字の太さ（普通）*/
+  color: #ffffff;/*白文字*/
+}
+.nav-logo-text .name-en {/*ヘッダーの「Chiba University Wind Orchestra」の文字*/
+  font-family: 'Zen Antique Soft', serif;/*フォント指定*/
+  font-size: 10px;/*小さめの文字サイズ*/
+  color: #c9a227;   /* ゴールド */
+  letter-spacing: 0.06em;/*文字間隔を少し広げる*/
+}
+
+/* ナビリンク */
+.nav-links {/*ヘッダー右側のリンク群全体*/
+  display: flex;/*リンクを横並びにする*/
+  gap: 36px;/*リンク同士の間隔*/
+}
+.nav-links a {/*ヘッダーの各リンク（楽団紹介・年間行事など）*/
+  color: #ffffff;/*白文字*/
+  font-size: 14px;/*文字サイズ*/
+  font-weight: 500;/*少し太めの文字*/
+  letter-spacing: 0.06em;/*文字間隔を少し広げる*/
+  padding-bottom: 3px;/*下に3pxの余白。下線が文字に重ならないようにする*/
+  border-bottom: 2px solid transparent;/*2pxの透明な下線。ホバー時に色を付けるための準備*/
+  transition: color 0.2s, border-color 0.2s;/*ホバー時に文字色と下線色が0.2秒でなめらかに変わる*/
+}
+.nav-links a:hover,
+.nav-links a.active {/*マウスを乗せたとき・現在開いているページのリンク*/
+  color: #c9a227;            /* ゴールド */
+  border-bottom-color: #c9a227;/*下線もゴールドにする*/
+}
+
+
+/* ================================================================
+   フッター（全ページ共通）
+   ================================================================ */
+.site-footer {/*全ページ共通のフッターエリア全体*/
+  background-color: #111b42;   /* ダークネイビー */
+  color: #ffffff;/*文字を白にする*/
+  text-align: center;/*中央揃え*/
+  padding: 40px 24px 32px;/*内側余白。上40px・左右24px・下32px*/
+}
+.footer-name {/*フッターの「千葉大学吹奏楽団」の文字*/
+  font-size: 15px;/*文字サイズ*/
+  font-weight: 500;/*少し太めの文字*/
+  letter-spacing: 0.12em;/*文字間隔を広げてゆったりと見せる*/
+  color: #ffffff;/*白文字*/
+  margin-bottom: 20px;/*下にSNSボタンとの間隔*/
+}
+.footer-links {/*フッターのInstagram・Xボタンをまとめた箱*/
+  display: flex;/*ボタンを横並びにする*/
+  justify-content: center;/*横方向の中央揃え*/
+  gap: 28px;/*ボタン同士の間隔*/
+  flex-wrap: wrap;/*画面が狭くなったとき折り返す*/
+  margin-bottom: 20px;/*下のページナビとの間隔*/
+}
+.footer-btn {/*フッターのInstagram・Xのボタン*/
+  display: inline-block;/*文章の流れの中に置けるブロック要素*/
+  border: 1px solid #c9a227;   /* ゴールド枠 */
+  color: #c9a227;              /* ゴールド文字 */
+  background: transparent;/*背景を透明にする*/
+  padding: 7px 28px;/*内側余白。上下7px・左右28px*/
+  font-size: 14px;/*文字サイズ*/
+  font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;/*フォント指定*/
+  letter-spacing: 0.06em;/*文字間隔を少し広げる*/
+  transition: background 0.2s, color 0.2s;/*ホバー時に背景と文字色が0.2秒でなめらかに変わる*/
+}
+.footer-btn:hover {/*フッターボタンにマウスを乗せたとき*/
+  background: #c9a227;/*背景をゴールドにする*/
+  color: #111b42;/*文字をダークネイビーにする*/
+}
+.footer-nav {/*フッター下部のページリンク（ホーム・楽団紹介など）をまとめた箱*/
+  display: flex;/*リンクを横並びにする*/
+  justify-content: center;/*横方向の中央揃え*/
+  gap: 24px;/*リンク同士の間隔*/
+  flex-wrap: wrap;/*画面が狭くなったとき折り返す*/
+  margin-top: 4px;/*SNSボタンとの間隔*/
+}
+.footer-nav a {/*フッターの各ページリンク（ホーム・楽団紹介など）*/
+  color: rgba(255,255,255,0.55);/*半透明の白文字（目立ちすぎないように）*/
+  font-size: 12px;/*小さめの文字サイズ*/
+  letter-spacing: 0.04em;/*文字間隔を少し広げる*/
+  transition: color 0.2s;/*ホバー時に文字色が0.2秒でなめらかに変わる*/
+}
+.footer-nav a:hover { color: #ffffff; /*マウスを乗せると白文字にして目立たせる*/
+}
+.footer-right {/*フッター右側の補足テキスト用（現在予備として定義）*/
+  font-size: 15px;/*文字サイズ*/
+  font-weight: 120;/*文字の太さ（かなり細め）*/
+  letter-spacing: 0.05em;/*文字間隔を少し広げる*/
+  color: #C0C0C0;/*シルバーの文字色*/
+}
+
+/* ================================================================
+   index.html — メインページ
+   ================================================================ */
+
+/* ヒーロー */
+.hero {/*メインページの一番上の大きいネイビーエリア全体*/
+  /* ヘッダーの高さ（約72px）を引いた残り全部をヒーローにする */
+  min-height: calc(100vh - 72px);/*画面の高さからヘッダー分を引いた高さを最小値にする*/
+  /* 下端をネイビー→白にグラデーション */
+  background: radial-gradient(
+  ellipse 60% 70% at 50% 50%,/*中央が明るい楕円形のグラデーション。60%・70%は楕円の横・縦の大きさ、at 50% 50%は中心位置*/
+  #2a3f7a 0%,/*中心の色（少し明るめのネイビー）*/
+  #1a2a5e 100%/*外側の色（通常のネイビー）*/
+  );
+  padding: 44px 0 80px;/*内側余白。上44px・左右0・下80px*/
+  overflow: hidden;/*子要素がはみ出しても見えないように隠す*/
+  /* 中身を縦方向に中央寄せ */
+  display: flex;/*Flexboxにして子要素を中央に配置できるようにする*/
+  align-items: center;/*縦方向の中央揃え*/
+}
+.hero .container {/*ヒーロー内の3列グリッド（左写真・中央テキスト・右写真）の箱*/
+  display: grid;/*Gridレイアウトで3列に分ける*/
+  grid-template-columns: 190px 1fr 170px;/*左列190px固定・中列残り全部・右列170px固定*/
+  align-items: start;/*縦方向の上揃え*/
+  gap: 28px;/*列と列の間隔*/
+  width: 100%;   /* flex の子要素として横幅をしっかり確保 */
+}
+.hero-photos-left,
+.hero-photos-right {/*ヒーロー左右の写真グループ*/
+  display: flex;/*写真を縦に並べる*/
+  flex-direction: column;/*縦方向に並べる*/
+  gap: 14px;/*写真同士の間隔*/
+  padding-top: 12px;/*上部に余白を入れてタイトルテキストと高さを合わせる*/
+}
+.hero-photo-lglg { width: 150%; }/*ヒーロー右下の大きい写真。親要素より150%大きく表示*/
+.hero-photo-lg { width: 120%; }/*写真の大きさを決める（大きい方）*/
+.hero-photo-sm { width: 90%; }/*ヒーロー左下の小さい写真*/
+
+.hero-center {/*ヒーロー中央のタイトルテキストエリア*/
+  text-align: center;/*文字を中央揃え*/
+  color: #ffffff;/*文字を白にする*/
+  padding: 8px 0;/*上下に少し余白*/
+}
+.hero-since {/*ヒーロー中央の「Since 1980」の文字*/
+  font-family: 'Zen Old Mincho', serif;/*フォント指定*/
+  font-size: 12px;/*小さめの文字サイズ*/
+  letter-spacing: 0.25em;/*文字間隔を広げてゆったりと見せる*/
+  color: #c9a227;    /* ゴールド */
+  margin-bottom: 2px;/*下の「Chiba University」との間隔*/
+}
+.hero-univ {/*メインページの大きい「Chiba University」の見た目を決めている*/
+  font-family: 'Zen Antique Soft', serif;/*フォント指定*/
+  font-size: 17px;/*文字サイズ*/
+  font-weight: 200;/*細めの文字の太さ*/
+  color: #ffffff;/*白文字*/
+  margin-bottom: 0;/*下の余白なし。Wind Orchestraと密着させる*/
+}
+.hero-title {/*メインページの大きい「Wind Orchestra」の見た目を決めている*/
+  font-family: 'Zen Antique Soft', serif;/*フォント指定*/
+  font-size: clamp(52px, 9vw, 84px);/*最小52px・画面幅の9%・最大84pxの範囲で自動調整*/
+  font-weight: 500;/*少し太めの文字*/
+  line-height: 1.0;/*行間を文字サイズぴったりにして「Wind」と「Orchestra」を詰める*/
+  color: #ffffff;/*白文字*/
+  margin: 2px 0 10px;/*上2px・左右0・下10pxの外側余白*/
+}
+.hero-name-ja {/*ヒーロー中央の「千葉大学吹奏楽団」の文字*/
+  font-family: 'Zen Old Mincho', serif;/*フォント指定*/
+  font-size: 15px;/*文字サイズ*/
+  letter-spacing: 0.2em;/*文字間隔を広げてゆったりと見せる*/
+  color: rgba(255,255,255,0.82);/*少し透明な白。純白より落ち着いた印象にする*/
+}
+
+/* お知らせ */
+.section-news { padding: 52px 0 36px; }/*メインページのお知らせセクション全体の余白。上52px・左右0・下36px*/
+.section-heading {/*「お知らせ」「次回の演奏会」などのセクション見出し*/
+  font-size: 27px;/*文字サイズ*/
+  font-weight: 600;/*太めの文字*/
+  color: #1a1a1a;/*ほぼ黒の文字色*/
+  margin-bottom: 16px;/*見出し下のリストとの間隔*/
+}
+.news-list { border-top: 1px solid #d0d0d0; }/*お知らせリスト全体の上に区切り線を引く*/
+.news-item {/*お知らせの1行分（日付＋テキスト）*/
+  display: flex;/*日付とテキストを横並びにする*/
+  align-items: baseline;/*テキストのベースライン（文字の底）で揃える*/
+  gap: 32px;/*日付とテキストの間隔*/
+  padding: 12px 8px;/*内側余白。上下12px・左右8px*/
+  border-bottom: 1px solid #d0d0d0;/*行の下に区切り線を引く*/
+  transition: background 0.15s;/*ホバー時に背景色が0.15秒でなめらかに変わる*/
+}
+.news-item:hover { background: rgba(201,162,39,0.05); }/*お知らせ行にマウスを乗せると薄いゴールドの背景になる*/
+.news-link {/*お知らせのリンク。行全体をクリックできるようにする*/
+  display: flex;/*日付とテキストを横並びにする*/
+  align-items: baseline;/*ベースラインで揃える*/
+  gap: 32px;/*日付とテキストの間隔*/
+  width: 100%;/*親要素いっぱいに広げてクリック範囲を最大にする*/
+  color: inherit;/*親要素の文字色を引き継ぐ（リンクのデフォルト青色を防ぐ）*/
+  text-decoration: none;/*リンクの下線を消す*/
+}
+
+.news-date {/*お知らせの日付（例：2026.09.1）*/
+  font-family: 'Kaisei Decol', serif;/*フォント指定*/
+	color: #c9a227;   /* ゴールド */
+  font-weight: 500;/*少し太めの文字*/
+  font-size: 13px;/*文字サイズ*/
+  white-space: nowrap;/*日付が途中で折り返されないようにする*/
+  min-width: 92px;/*最小幅を確保してテキストとの位置が揃うようにする*/
+}
+.news-text { font-size: 14px; color: #1a1a1a; flex: 1; }
+/*お知らせの本文。flex:1で残りのスペースを全部使う*/
+
+/* 次回の演奏会 */
+.section-next-concert { padding: 36px 0 52px; }/*次回の演奏会セクション全体の余白。上36px・左右0・下52px*/
+.next-concert-inner {/*ポスター画像と演奏会情報を横並びにする箱*/
+  display: flex;/*横並びにする*/
+  align-items: flex-start;/*縦方向の上揃え*/
+  gap: 32px;/*ポスターと情報テキストの間隔*/
+}
+.concert-poster { width: 320px; flex-shrink: 0; }/*演奏会ポスター画像の幅を320pxに固定し、縮まないようにする*/
+.concert-info { padding: 4px 0 0; flex: 1; }/*演奏会タイトルなどの情報エリア。残りのスペースを全部使う*/
+.concert-number { font-size: 20px; font-weight: 700; color: #1a1a1a; margin-bottom: 4px; }/*「第29回」の文字。大きさ20px・太字・ほぼ黒・下に4pxの間隔*/
+.concert-name   { font-size: 37px; font-weight: 700; color: #1a1a1a; margin-bottom: 24px; }/*演奏会名（例：Summer Concert）。大きさ37px・太字・ほぼ黒・下に24pxの間隔*/
+.concert-day { font-size: 22px; font-weight: 700; color: #1a1a1a; margin-bottom: 240px; }/*演奏会の日付。大きさ22px・太字・ほぼ黒・下に240pxの間隔（ポスターの高さに合わせるため）*/
+.concert-link-wrap { display: flex; justify-content: flex-end; margin-top: 16px; }
+/*「過去の演奏会」ボタンを右端に配置する箱*/
+
+
+/* ================================================================
+   News.html — 過去のお知らせ
+   ================================================================ */
+/*基本的にはメインページのお知らせ部分と同じ構造を流用。異なる部分だけこっちで別で制作*/
+.oldnews-item {/*過去のお知らせページの1行分（news-itemとほぼ同じ構造）*/
+  display: flex;/*日付とテキストを横並びにする*/
+  align-items: baseline;/*ベースラインで揃える*/
+  gap: 32px;/*日付とテキストの間隔*/
+  padding: 12px 8px;/*内側余白。上下12px・左右8px*/
+  border-bottom: 1px solid #d0d0d0;/*行の下に区切り線を引く*/
+  transition: background 0.15s;/*ホバー時に背景色が0.15秒でなめらかに変わる*/
+}
+
+
+/* ================================================================
+   about.html — 楽団紹介
+   ================================================================ */
+.page-title {/*楽団紹介・過去の演奏会・お問い合わせページの大見出し*/
+  font-size: 28px;/*文字サイズ*/
+  font-weight: 700;/*太字*/
+  color: #1a1a1a;/*ほぼ黒の文字色*/
+  margin-bottom: 36px;/*見出し下の本文との間隔*/
+}
+.about-inner {/*楽団紹介ページの本文テキスト（左）と写真（右）を2列に並べる箱*/
+  display: grid;/*Gridレイアウトで2列に分ける*/
+  grid-template-columns: 1fr 420px;/*左列が残り全部・右列420px固定*/
+  gap: 48px;/*列と列の間隔*/
+  align-items: start;/*縦方向の上揃え*/
+  margin-bottom: 48px;/*下の基本情報エリアとの間隔*/
+}
+.about-text p { font-size: 14px; line-height: 1.95; color: #1a1a1a; }
+/*楽団紹介の本文テキスト。文字サイズ14px・行間1.95倍・ほぼ黒*/
+.about-photo .photo-placeholder { aspect-ratio: 4/3; }/*楽団紹介の写真プレースホルダーを4:3の縦横比に固定*/
+.about-footer-info {/*楽団紹介ページ下部の「設立：1980年」などの基本情報エリア*/
+  font-size: 13px;/*文字サイズ*/
+  color: #555555;/*グレーの文字色*/
+  margin-top: 48px;/*上の本文との間隔*/
+  padding-top: 20px;/*上に内側余白を入れて区切り線と文字の間に空きを作る*/
+  border-top: 1px solid #d0d0d0;/*上に区切り線を引く*/
+}
+.info-label { font-weight: 700; color: #1a1a1a; }/*「設立：」「所在地：」などのラベル文字を太字・ほぼ黒にする*/
+
+/* ================================================================
+   events.html — 年間行事
+   ================================================================ */
+.events-title { font-size: 22px; font-weight: 700; color: #1a1a1a; margin-bottom: 44px; }/*「主な年間行事」の見出し。文字サイズ22px・太字・ほぼ黒・下に44pxの間隔*/
+.event-item   { margin-bottom: 60px; }/*1つの行事ブロック全体。次の行事との間隔*/
+.event-month  { font-size: 14px; color: #1a1a1a; margin-bottom: 2px; }/*「3月」「4月」などの月の表示。サイズ14px・ほぼ黒・下に2pxの間隔*/
+.event-name   { font-size: 18px; font-weight: 700; color: #1a1a1a; margin-bottom: 14px; }/*「春合宿」「新入生歓迎演奏会」などの行事名。サイズ18px・太字・ほぼ黒・下に14pxの間隔*/
+.event-detail {/*各行事の説明テキスト（左）と写真（右）を2列に並べる箱*/
+  display: grid;/*Gridレイアウトで2列に分ける*/
+  grid-template-columns: 1fr 280px;/*左列が残り全部・右列280px固定*/
+  gap: 32px;/*列と列の間隔*/
+  align-items: start;/*縦方向の上揃え*/
+}
+.event-desc { font-size: 13px; line-height: 1.9; color: #555555; }/*各行事の説明文。文字サイズ13px・行間1.9倍・グレー*/
+.event-photo .photo-placeholder { aspect-ratio: 4/3; }/*行事写真プレースホルダーを4:3の縦横比に固定*/
+
+
+/* ================================================================
+   concerts.html — 過去の演奏会
+   ================================================================ */
+.concert-block { margin-bottom: 68px; }/*1つの演奏会ブロック（スライダー1セット）全体。次のブロックとの間隔*/
+.concert-block-title {/*「新入生歓迎演奏会」「定期演奏会」などの演奏会種別の見出し*/
+  font-size: 18px;/*文字サイズ*/
+  font-weight: 700;/*太字*/
+  color: #1a1a1a;/*ほぼ黒の文字色*/
+  margin-bottom: 18px;/*下のスライダーとの間隔*/
+  padding-bottom: 10px;/*下線と文字の間に余白を入れる*/
+  border-bottom: 2px solid #1a2a5e;   /* ネイビー下線 */
+}
+
+/* スライダー */
+.concert-slider {/*◀スライド▶の左右ボタンとスライドエリアを横並びにする箱*/
+  display: flex;/*横並びにする*/
+  align-items: center;/*縦方向の中央揃え*/
+  gap: 12px;/*ボタンとスライドエリアの間隔*/
+}
+.slider-btn {/*◀と▶の三角ボタン*/
+  background: none;/*背景なし（透明）*/
+  border: none;/*枠線なし*/
+  cursor: pointer;/*カーソルを指マークにする*/
+  padding: 8px 4px;/*クリックしやすいように内側余白を設定*/
+  color: #1a2a5e;   /* ネイビー三角 */
+  font-size: 20px;/*三角の大きさ*/
+  line-height: 1;/*行間を最小にして余計な高さをなくす*/
+  flex-shrink: 0;/*Flexbox内でボタンが縮まないようにする*/
+  transition: color 0.2s, transform 0.15s;/*ホバー時に色と大きさが0.2秒・0.15秒でなめらかに変わる*/
+  user-select: none;/*ボタンを連打したとき文字が選択されないようにする*/
+}
+.slider-btn:hover   { color: #c9a227; transform: scale(1.25); }/*ホバー時にゴールドに変色・1.25倍に拡大*/
+.slider-btn:disabled { color: #d0d0d0; cursor: default; transform: none; }/*端の年度で押せないとき・グレーに変色・矢印カーソル・拡大なし*/
+
+.concert-slides { flex: 1; overflow: hidden; }/*スライドを表示するエリア。残りのスペースを全部使い、はみ出した部分を隠す*/
+.concert-slide  { display: none; }/*通常は非表示。JSで.activeクラスが付いたものだけ表示される*/
+.concert-slide.active {/*現在表示中のスライド*/
+  display: block;/*表示する*/
+  animation: slideIn 0.3s ease;/*slideInアニメーションを0.3秒かけてなめらかに再生*/
+}
+@keyframes slideIn {/*スライドが切り替わるときのアニメーション定義*/
+  from { opacity: 0; transform: translateX(10px); }/*最初：透明で右に10pxずれた状態から始まる*/
+  to   { opacity: 1; transform: translateX(0); }/*最後：不透明で元の位置に収まる*/
+}
+.concert-year {/*「2025年」「2026年」などの年度表示*/
+	font-weight: 600; /*少し太めの文字*/
+	font-size: 22; /*文字サイズ（pxの単位が抜けているためブラウザのデフォルトが適用される）*/
+	color: #555555; /*グレーの文字色*/
+	margin-bottom: 10px; /*下の写真・プログラムエリアとの間隔*/
+}
+
+.concert-content {/*各年度の写真（左）とプログラム（右）を2列に並べる箱*/
+  display: grid;/*Gridレイアウトで2列に分ける*/
+  grid-template-columns: 200px 1fr;/*左列200px固定・右列残り全部*/
+  gap: 32px;/*列と列の間隔*/
+  align-items: start;/*縦方向の上揃え*/
+}
+.concert-slide-photo .photo-placeholder { aspect-ratio: 3/4; }/*演奏会写真プレースホルダーを3:4の縦横比（縦長）に固定*/
+.concert-program { padding-top: 2px; }/*プログラムエリア全体の上に少し余白を入れる*/
+.program-label {/*「Program」「Bands」などのラベル文字*/
+  font-size: 13px;/*文字サイズ*/
+  font-weight: 700;/*太字*/
+  letter-spacing: 0.12em;/*文字間隔を広げてゆったりと見せる*/
+  color: #555555;/*グレーの文字色*/
+  margin-bottom: 10px;/*下の曲目リストとの間隔*/
+  padding-bottom: 6px;/*下線と文字の間に余白を入れる*/
+  border-bottom: 1px solid #d0d0d0;/*下に区切り線を引く*/
+}
+.program-list li {/*プログラムのリストを作っている*/
+  font-size: 13px;/*文字サイズ*/
+  color: #1a1a1a;/*ほぼ黒の文字色*/
+  padding: 4px 0;/*上下に4pxの内側余白。各曲名に縦の余白をつける*/
+  border-bottom: 1px dotted #d0d0d0;/*曲名の下に点線の区切りを引く*/
+  line-height: 1.6;/*行間。長い曲名が折り返したときの行間*/
+}
+.program-list li:last-child { border-bottom: none; }/*最後の曲名の下には区切り線を引かない*/
+
+/* ドットインジケーター（スライディングウィンドウ型・最大5個表示） */
+.slider-dots {/*ドットをまとめた箱。スライダーの下に配置される*/
+  display: flex;/*ドットを横並びにする*/
+  justify-content: center;/*横方向の中央揃え*/
+  align-items: center;/*縦方向の中央揃え。大きさが違うドットの中心が揃う*/
+  gap: 5px;/*ドット同士の間隔*/
+  margin-top: 14px;/*スライダーとの間隔*/
+  height: 16px;/*高さを固定してドットのサイズが変わっても箱がガタつかないようにする*/
+}
+.slider-dot {/*個々のドット*/
+  border-radius: 50%;/*角を完全に丸めて円にする*/
+  background: #d0d0d0;/*グレーの背景（非アクティブ時）*/
+  border: none;/*枠線なし*/
+  cursor: pointer;/*カーソルを指マークにする*/
+  transition: width 0.25s ease, height 0.25s ease, opacity 0.25s ease, background 0.25s ease;/*サイズ・透明度・色の変化を0.25秒でなめらかにする*/
+  flex-shrink: 0;/*Flexbox内でドットが縮まないようにする*/
+  padding: 0;/*内側余白なし*/
+}
+/* 距離に応じたドットサイズ（JSがクラスを付与） */
+.slider-dot.dot-lg  { width: 8px; height: 8px; opacity: 1;    } /* 現在地（一番大きい・完全不透明）*/
+.slider-dot.dot-md  { width: 6px; height: 6px; opacity: 0.7;  } /* 隣（中くらい・少し透明）*/
+.slider-dot.dot-sm  { width: 4px; height: 4px; opacity: 0.45; } /* 2つ隣（小さい・半透明）*/
+.slider-dot.dot-xs  { width: 2px; height: 2px; opacity: 0.25; } /* 端（極小・ほぼ透明）*/
+.slider-dot.active  { background: #1a2a5e; }/*現在表示中のスライドに対応するドットをネイビーにする*/
+.slider-dot:not(.active) { background: #d0d0d0; }/*現在地以外のドットをグレーにする*/
+
+
+/* ================================================================
+   contact.html — お問い合わせ
+   ================================================================ */
+.contact-lead { font-size: 14px; line-height: 1.9; color: #1a1a1a; margin-bottom: 36px; }
+/*お問い合わせページの「団へのご連絡…」のリード文。文字サイズ14px・行間1.9倍・ほぼ黒・下に36pxの間隔*/
+.contact-cards {/*連絡先の箱をまとめた枠*/
+  display: flex;/*カードを横並びにする*/
+  gap: 20px;/*カード同士の間隔*/
+  flex-wrap: wrap;/*画面が狭くなったとき折り返す*/
+  margin-bottom: 200px;/*下の渉内情報との間隔（大きめに取っている）*/
+}
+.contact-card {/*Mail・Instagram・Xの各連絡先カード*/
+  border: 1.5px solid #c9a227;   /* ゴールド枠 */
+  padding: 20px 28px;/*内側余白。上下20px・左右28px*/
+  text-align: center;/*中央揃え*/
+  min-width: 180px;/*最小幅。これ以上狭くならない*/
+  flex: 1;/*残りのスペースを均等に分けて横幅を揃える*/
+}
+.contact-card-type  { font-size: 15px; font-weight: 700; color: #1a1a1a; margin-bottom: 8px; }/*「Mail」「Instagram」などのカード見出し。サイズ15px・太字・ほぼ黒・下に8pxの間隔*/
+.contact-card-value { font-size: 13px; color: #555555; word-break: break-all; }/*メールアドレスやアカウント名。サイズ13px・グレー・長い文字列はどこでも折り返す*/
+.contact-card a     { color: #555555; text-decoration: underline; text-underline-offset: 2px; }/*カード内のリンク。グレー・下線あり・下線を2px下にずらす*/
+.contact-card a:hover { color: #c9a227; }/*カード内リンクにマウスを乗せるとゴールドに変わる*/
+
+.contact-note { font-size: 13px; color: #1a1a1a; line-height: 1.9; }/*「なお、学内施設の…」の補足テキスト。サイズ13px・ほぼ黒・行間1.9倍*/
+.contact-note-inner {/*渉内の連絡先をまとめた箱。左にゴールドの縦線がある*/
+  margin-top: 12px;/*上の文章との間隔*/
+  padding-left: 14px;/*左の縦線と文字の間に余白を入れる*/
+  border-left: 3px solid #c9a227;   /* ゴールド縦線 */
+}
+.contact-note-label { font-weight: 700; font-size: 13px; color: #1a1a1a; margin-bottom: 2px; }/*「当団渉内」のラベル。太字・サイズ13px・ほぼ黒・下に2pxの間隔*/
+.contact-note-value { font-size: 13px; color: #555555; }/*渉内のメールアドレス。サイズ13px・グレー*/
+.contact-note-value a { color: #555555; text-decoration: underline; }/*渉内メールのリンク。グレー・下線あり*/
+.contact-note-value a:hover { color: #c9a227; }/*渉内メールリンクにマウスを乗せるとゴールドに変わる*/
+
+
+/* ================================================================
+   レスポンシブ（スマートフォン）
+   ================================================================ */
+@media (max-width: 760px) {/*画面幅が760px以下（スマホ・タブレット）のときだけ以下のスタイルが適用される*/
+  .container { padding: 0 16px; }/*スマホでは左右の余白を32pxから16pxに狭める*/
+  .site-nav .container { flex-direction: column; align-items: flex-start; gap: 10px; }/*スマホではナビのロゴとリンクを縦積みにして左揃えにする*/
+  .nav-links { gap: 14px; flex-wrap: wrap; }/*スマホではナビリンクの間隔を狭め、折り返しを許可する*/
+  .nav-links a { font-size: 13px; }/*スマホではナビリンクの文字を少し小さくする*/
+  .hero .container { grid-template-columns: 1fr; }/*スマホではヒーローを3列から1列に変える*/
+  .hero-photos-left, .hero-photos-right { flex-direction: row; }/*スマホでは写真を縦並びから横並びに変える*/
+  .hero-photo-lglg { width: 100%; }/*スマホでは大きい写真を親要素いっぱいに表示*/
+  .hero-photo-lg { width: 80%; }/*写真の大きさを決める（大きい方）*/
+  .hero-photo-sm { width: 60%; }/*スマホでは小さい写真を60%幅に*/
+  .about-inner    { grid-template-columns: 1fr; }/*スマホでは楽団紹介を2列から1列に変える*/
+  .event-detail   { grid-template-columns: 1fr; }/*スマホでは年間行事を2列から1列に変える*/
+  .concert-content { grid-template-columns: 1fr; }/*スマホでは演奏会内容を2列から1列に変える*/
+  .contact-cards  { flex-direction: column; }/*スマホではお問い合わせカードを横並びから縦積みに変える*/
+  .next-concert-inner { flex-direction: column; }/*スマホでは次回演奏会のポスターと情報を縦積みに変える*/
+  .concert-poster { width: 100%; }/*スマホではポスターを横幅いっぱいに広げる*/
+	.concert-day {margin-bottom: 24px;}/*スマホでは演奏会日付の下余白を240pxから24pxに大幅縮小*/
+  .concert-info   { padding: 16px 0 0; }/*スマホでは演奏会情報エリアの上に余白を入れる*/
+}
