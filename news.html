@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>過去のお知らせ — 千葉大学吹奏楽団</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<link rel="stylesheet" href="style.css">
+</head>
+	
+<!--ここからがメインのホームページの中身-->
+<body>
+	
+<!--ヘッダーの部分（全ページ共通）-->
+<header class="site-nav">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png" alt="千葉大学吹奏楽団ロゴ" onerror="this.style.display='none'">
+      <div class="nav-logo-text">
+        <span class="name-ja">千葉大学吹奏楽団</span>
+        <span class="name-en">Chiba University Wind Orchestra</span>
+      </div>
+    </a>
+    <nav class="nav-links">
+      <a href="about.html">♪楽団紹介</a>
+      <a href="events.html">♪年間行事</a>
+      <a href="concerts.html">♪過去の演奏会</a>
+      <a href="contact.html">♪お問い合わせ</a>
+    </nav>
+  </div>
+</header><!--ヘッダーの部分終わり-->
+
+	
+<!--過去のお知らせページ-->
+<main class="page-content">
+  <div class="container">
+
+    <h1 class="page-title" data-aos="fade-up">過去のお知らせ</h1>
+
+    <!-- ============================================================
+         お知らせの追加・編集方法：
+         <li class="news-item"> をコピーして増やしてください。
+         新しいものが上に来るよう、上から順に追加してください。
+         ============================================================ -->
+	  
+    <ul class="news-list" data-aos="fade-up">
+      <!-- ここにお知らせを追加（新しい順） -->
+      <li class="oldnews-item">
+        <span class="news-date">2026.09.1</span>
+        <span class="news-text">ホームページを新しくしました！</span>
+      </li>
+      <li class="oldnews-item">
+        <span class="news-date">2026.08.30</span>
+        <span class="news-text">サマーコンサートを実施しました</span>
+      </li>
+      <!-- 以下に古いお知らせを追加していってください -->
+    </ul>
+
+  </div>
+</main><!--過去のお知らせページ終わり-->
+	
+
+<!--フッターの部分（全ページ共通）-->
+<footer class="site-footer">
+  <p class="footer-name">千葉大学吹奏楽団</p><!--中央のタイトル-->
+  <div class="footer-links">
+	  <a href="https://www.instagram.com/cuwo_official" target="_blank" class="footer-btn">Instagram</a> <!--インスタに飛べるボタン-->
+	  <a href="https://twitter.com/c_u_w_o" target="_blank" class="footer-btn">X（旧 Twitter）</a> <!--Xに飛べるボタン-->
+　</div>
+  <nav class="footer-nav"> <!--各ページに飛ぶボタン-->
+	  <a href="index.html">ホーム</a>
+	  <a href="news.html">過去のお知らせ</a> 
+	  <a href="about.html">楽団紹介</a> 
+	  <a href="events.html">年間行事</a> 
+	  <a href="concerts.html">過去の演奏会</a> 
+	  <a href="contact.html">お問い合わせ</a>  
+	</nav>
+　<p class="footer-right">Copyright © Chiba University Wind Orchestra  All Rights Reserved.s</p><!--権利情報記載-->
+</footer><!--フッターの部分終わり-->
+
+	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>AOS.init({ duration: 700, once: true, offset: 60, easing: 'ease-out-cubic' });</script>
+</body>
+</html>

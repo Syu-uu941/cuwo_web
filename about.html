@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>千葉大学吹奏楽団とは — 千葉大学吹奏楽団</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+	
+<!--ここからがメインのホームページの中身-->
+<body>
+	
+	
+<!--ヘッダーの部分（全ページ共通）-->
+  <header class="site-nav">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.png" alt="千葉大学吹奏楽団ロゴ" onerror="this.style.display='none'">
+        <div class="nav-logo-text">
+          <span class="name-ja">千葉大学吹奏楽団</span>
+          <span class="name-en">Chiba University Wind Orchestra</span>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="about.html" class="active">♪楽団紹介</a><!--そのページにいるときは色が変わるように　class="active"　をつける-->
+        <a href="events.html">♪年間行事</a>
+        <a href="concerts.html">♪過去の演奏会</a>
+        <a href="contact.html">♪お問い合わせ</a>
+      </nav>
+    </div>
+  </header><!--ヘッダーの部分終わり-->
+
+	
+  <!-- メインコンテンツ -->
+  <main class="page-content">
+    <div class="container">
+
+      <!-- ページタイトル -->
+      <h1 class="page-title" data-aos="fade-up">千葉大学吹奏楽団とは？</h1>
+
+      <!-- 紹介文と写真 -->
+      <div class="about-inner">
+
+        <!-- ============================================================
+             紹介文の編集方法：
+             下の <p> タグの中身を書き換えてください。
+             段落を増やしたい場合は <p> を追加してください。
+             ============================================================ -->
+        <div class="about-text" data-aos="fade-right">
+          <p>
+            千葉大学吹奏楽団は千葉大学公認の吹奏楽サークルです。<br>
+            千葉大学の様々な学部（松戸、亥鼻を含む）からたくさんの団員が集まり、各学年50人前後、全体では200人にも達する大所帯です。<br>
+            8月のサマーコンサート（通称サマコン）や、12月の定期演奏会などたくさんの活動を通して、団員一同日々仲良く練習に励んでいます。
+          </p>
+        </div>
+        <div class="about-photo" data-aos="fade-left">
+          <img src="images/All photo.jpg" alt="団の様子"><!--ここが写真を司っている-->
+        </div>
+
+      </div>
+
+      <!-- 設立年など基本情報 -->
+      <!-- ============================================================
+           基本情報の編集方法：
+           設立年・その他の情報を変更してください。
+           行を追加する場合は <p> を増やしてください。
+           ============================================================ -->
+      <div class="about-footer-info" data-aos="fade-up">
+        <p><span class="info-label">設立：</span>1980年</p>
+		<p><span class="info-label">所在地：</span>千葉県千葉市稲毛区弥生町1-33　千葉大学西千葉キャンパス</p>
+      </div>
+
+    </div>
+  </main><!--メインコンテンツ終わり-->
+
+	
+  <!--フッターの部分（全ページ共通）-->
+<footer class="site-footer">
+  <p class="footer-name">千葉大学吹奏楽団</p><!--中央のタイトル-->
+  <div class="footer-links">
+	  <a href="https://www.instagram.com/cuwo_official" target="_blank" class="footer-btn">Instagram</a> <!--インスタに飛べるボタン-->
+	  <a href="https://twitter.com/c_u_w_o" target="_blank" class="footer-btn">X（旧 Twitter）</a> <!--Xに飛べるボタン-->
+　</div>
+  <nav class="footer-nav"> <!--各ページに飛ぶボタン-->
+	  <a href="index.html">ホーム</a>
+	  <a href="news.html">過去のお知らせ</a> 
+	  <a href="about.html">楽団紹介</a> 
+	  <a href="events.html">年間行事</a> 
+	  <a href="concerts.html">過去の演奏会</a> 
+	  <a href="contact.html">お問い合わせ</a> 
+  </nav>
+　<p class="footer-right">Copyright © Chiba University Wind Orchestra  All Rights Reserved.s</p><!--権利情報記載-->
+</footer><!--フッターの部分終わり-->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({ duration: 700, once: true, offset: 60, easing: 'ease-out-cubic' });
+  </script>
+</body>
+</html>

@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>過去の演奏会 — 千葉大学吹奏楽団</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ---- スライドアニメーション ----
+       ◀（古い年へ）→ 左からイン（コンテンツが左から出てくる）
+       ▶（新しい年へ）→ 右からイン（コンテンツが右から出てくる）
+    ---------------------------------- */
+    @keyframes slideInFromLeft {
+      from { opacity: 0; transform: translateX(-40px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes slideInFromRight {
+      from { opacity: 0; transform: translateX(40px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    .concert-slide.slide-in-left  { animation: slideInFromLeft  0.3s ease; }
+    .concert-slide.slide-in-right { animation: slideInFromRight 0.3s ease; }
+  </style>
+</head>
+	
+	<!--ここからがメインのホームページの中身-->
+<body>
+	
+	 <!--ヘッダーの部分（全ページ共通）-->
+  <header class="site-nav">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.png" alt="千葉大学吹奏楽団ロゴ" onerror="this.style.display='none'">
+        <div class="nav-logo-text">
+          <span class="name-ja">千葉大学吹奏楽団</span>
+          <span class="name-en">Chiba University Wind Orchestra</span>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="about.html">♪楽団紹介</a>
+        <a href="events.html">♪年間行事</a>
+        <a href="concerts.html" class="active">♪過去の演奏会</a><!--そのページにいるときは色が変わるように　class="active"　をつける-->
+        <a href="contact.html">♪お問い合わせ</a>
+      </nav>
+    </div>
+  </header> <!--ヘッダーの部分終わり-->
+
+	
+  <!-- メインコンテンツ -->
+  <main class="page-content">
+    <div class="container">
+
+      <h1 class="page-title" data-aos="fade-up">過去の演奏会</h1>
+
+      <!-- ================================================================
+           【スライドの使い方】
+
+           ・スライドは「新しい年が先頭（上）、古い年が末尾（下）」の順に並べてください
+           ・最初のスライド（最新年）だけ class="concert-slide active" にしてください
+           ・◀ = 1年前（古い年）、▶ = 1年後（新しい年）
+
+           【年度を追加するとき】
+             <div class="concert-slide"> をコピーして、年と曲目を書き換えてください
+             ※ class="concert-slide" のみ（active なし）で追加してください
+
+           ================================================================ -->
+
+
+      <!-- ================================================================
+           新入生歓迎演奏会
+           ================================================================ -->
+      <div class="concert-block" data-aos="fade-up">
+        <h2 class="concert-block-title">新入生歓迎演奏会</h2>
+        <div class="concert-slider">
+          <button class="slider-btn prev-btn" aria-label="1年前へ">&#9664;</button>
+          <div class="concert-slides">
+
+            <!-- 2026年 ▼ 最新年なので active を付ける -->
+            <div class="concert-slide active">
+              <p class="concert-year">2026 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Poster/2026Welcom.jpg" alt="説明"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>アルヴァマー序曲</li>
+                    <li>ヘイル・ザ・ドラゴン！</li>
+                    <li>ディスコキッド</li>
+                    <li>人生のメリーゴーランド</li>
+                    <li>ミュージカル「レ・ミゼラブル」より</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2025年 -->
+            <div class="concert-slide">
+              <p class="concert-year">2025 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Poster/2025Welcom.png" alt="説明"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>カーテン・アップ！</li>
+					<li>道祖神の詩</li>
+					<li>スペイン</li>
+					<li>DANZEN!二人はプリキュア</li>
+					<li>春の猟犬</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2024年 -->
+            <div class="concert-slide">
+              <p class="concert-year">2024 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Poster/2024Welcom.jpg" alt="説明"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>マーチ・スカイブルードリーム</li>
+					<li>キャラバンの到着</li>
+					<li>ジャパニーズ・グラフィティⅩⅤⅢアニメヒーロー大集合！</li>
+					<li>テトラ・テトラ</li>
+					<li>「ノートルダムの鐘」より</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2023年 -->
+            <div class="concert-slide">
+              <p class="concert-year">2023 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Poster/2023Welcom.jpg" alt="説明"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>ザ・バンドワゴン</li>
+					<li>天国の島</li>
+					<li>ジャンボリミッキー！</li>
+					<li>ディープ・パープル・メドレー</li>
+					<li>ドラゴンクエストによるコンサートセレクション</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+			  
+            <!-- 2022年 -->
+            <div class="concert-slide">
+              <p class="concert-year">2022 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Comming soon.jpg" alt="説明"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>ディズニー・ファンティリュージョン！</li>
+					<li>ONE!</li>
+					<li>カーペンターズ・フォーエバー</li>
+					<li>組曲「宇宙船艦ヤマト」</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2021年 -->
+            <div class="concert-slide">
+              <p class="concert-year">2021 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/No image.jpg" alt="説明"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>未開催</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2020年 -->
+            <div class="concert-slide">
+              <p class="concert-year">2020 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/No image.jpg" alt="説明"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>未開催</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- /.concert-slides -->
+          <button class="slider-btn next-btn" aria-label="1年後へ">&#9654;</button>
+        </div>
+        <div class="slider-dots"></div>
+      </div>
+
+		
+      <!-- ================================================================
+           フレッシュコンサート
+           ================================================================ -->
+      <div class="concert-block" data-aos="fade-up">
+        <h2 class="concert-block-title">フレッシュコンサート</h2>
+        <div class="concert-slider">
+          <button class="slider-btn prev-btn" aria-label="1年前へ">&#9664;</button>
+			
+          <div class="concert-slides">
+			<!-- 2026年 ▼ 最新年なので active を付ける -->
+            <div class="concert-slide active">
+              <p class="concert-year">2026 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Poster/2026Fresh.jpg" alt="説明"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>ウィーアー！</li>
+                    <li>A Disneyland Celebration</li>
+                    <li>マーチ・ブランニューデイ</li>
+                    <li>SEDONA</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+			  <!--2025年-->
+            <div class="concert-slide">
+              <p class="concert-year">2025 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Poster/2025Fresh.png" alt="フレコン2025"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>交響組曲「ドラゴンクエストⅠ」序曲</li>
+					<li>フライ・ハイ</li>
+					<li>マーチ「春風の通り道」</li>
+					<li>「ライオンキング」メドレー（arr.by John Higgins）</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="concert-slide">
+              <p class="concert-year">2024 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Poster/2024Fresh.jpg" alt="説明"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>Welcom</li>
+					<li>ストームライダー組曲</li>
+					<li>ムーンライトセレナーデ</li>
+					<li>カリブの海賊</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="concert-slide">
+              <p class="concert-year">2023 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Poster/2023Fresh.jpg" alt="説明"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>76本のトロンボーン</li>
+					<li>ディズニー・ヴィランズメドレー</li>
+					<li>さくらのうた</li>
+					<li>魔法にかけられて</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="concert-slide">
+              <p class="concert-year">2022 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Comming soon.jpg" alt="説明"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>調査中</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="concert-slide">
+              <p class="concert-year">2021 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/No image.jpg" alt="説明"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>未開催</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="concert-slide">
+              <p class="concert-year">2020 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/No image.jpg" alt="説明"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>未開催</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <button class="slider-btn next-btn" aria-label="1年後へ">&#9654;</button>
+        </div>
+        <div class="slider-dots"></div>
+      </div>
+
+
+      <!-- ================================================================
+           夏の西千葉駅前コンサート
+           ================================================================ -->
+      <div class="concert-block" data-aos="fade-up">
+        <h2 class="concert-block-title">夏の西千葉駅前コンサート</h2>
+        <div class="concert-slider">
+          <button class="slider-btn prev-btn" aria-label="1年前へ">&#9664;</button>
+          <div class="concert-slides">
+
+            <div class="concert-slide active">
+              <p class="concert-year">2026 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Poster/2026Natueki.jpg" alt="説明"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>Mela!</li>
+                    <li>とくベチュ、して</li>
+                    <li>マイステーションマイタウン西千葉</li>
+                    <li>アフリカンシンフォニー</li>
+                    <li>「君の名は。」コレクション</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="concert-slide">
+              <p class="concert-year">2025 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Poster/2025Natueki.jpg" alt="説明"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>夏祭り</li>
+                    <li>サンバ・デ・ラヴズ・ユー</li>
+					 <li>マイステーションマイタウン西千葉</li>
+					 <li>シロクマ</li>
+					 <li>ジャパニーズグラフティⅩⅠⅤ　ARASHI～Beautiful Days</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="concert-slide">
+              <p class="concert-year">2024 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Poster/2024Natueki.jpg" alt="説明"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>HOT LIMIT</li>
+					<li>Happiness</li>
+					<li>マイステーションマイタウン西千葉</li>
+					<li>英雄の証</li>
+					<li>ディズニー・アット・ザ・ムービー</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="concert-slide">
+              <p class="concert-year">2023 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Poster/2023Natueki.jpg" alt="説明"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>Another Day of Sun</li>
+					<li>J-POP 夏うたコレクション</li>
+					<li>マイステーションマイタウン西千葉</li>
+					<li>September</li>
+					<li>ディズニー・プリンセスメドレー</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="concert-slide">
+              <p class="concert-year">2022 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Poster/2022Natueki.jpg" alt="説明"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>マツケンサンバⅡ</li>
+					<li>in the moon</li>
+					<li>マイステーションマイタウン西千葉</li>
+					<li>リトル・マーメイド・メドレー</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="concert-slide">
+              <p class="concert-year">2021 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/No image.jpg" alt="説明"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>未開催</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="concert-slide">
+              <p class="concert-year">2020 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/No image.jpg" alt="説明"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>未開催</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <button class="slider-btn next-btn" aria-label="1年後へ">&#9654;</button>
+        </div>
+        <div class="slider-dots"></div>
+      </div>
+
+
+      <!-- ================================================================
+           東建検見川マンションプールサイドコンサート
+           ================================================================ -->
+      <div class="concert-block" data-aos="fade-up">
+        <h2 class="concert-block-title">東建検見川マンションプールサイドコンサート</h2>
+        <div class="concert-slider">
+          <button class="slider-btn prev-btn" aria-label="1年前へ">&#9664;</button>
+          <div class="concert-slides">
+
+            <div class="concert-slide active">
+              <p class="concert-year">2026 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Poster/2026Pu-ru.jpg" alt="説明"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>Mela!</li>
+                    <li>とくベチュ、して</li>
+                    <li>アフリカンシンフォニー</li>
+                    <li>「君の名は。」コレクション</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="concert-slide">
+              <p class="concert-year">2025 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Poster/2025Pu-ru.jpg" alt="説明"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>夏祭り</li>
+                    <li>サンバ・デ・ラヴズ・ユー</li>
+					<li>シロクマ</li>
+					<li>ジャパニーズグラフティⅩⅠⅤ　ARASHI～Beautiful Days</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="concert-slide">
+              <p class="concert-year">2024 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Poster/2024Pu-ru.jpg" alt="説明"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>HOT LIMIT</li>
+					<li>Happiness</li>
+					<li>英雄の証</li>
+					<li>ディズニー・アット・ザ・ムービー</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="concert-slide">
+              <p class="concert-year">2023 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Poster/2023Pu-ru.jpg" alt="説明"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>Another Day of Sun</li>
+					<li>J-POP 夏うたコレクション</li>
+					<li>マイステーションマイタウン西千葉</li>
+					<li>September</li>
+					<li>ディズニー・プリンセスメドレー</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="concert-slide">
+              <p class="concert-year">2022 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Poster/2022Pu-ru.jpg" alt="説明"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>マツケンサンバⅡ</li>
+					<li>in the moon</li>
+					<li>マイステーションマイタウン西千葉</li>
+					<li>リトル・マーメイド・メドレー</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="concert-slide">
+              <p class="concert-year">2021 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/No image.jpg" alt="説明"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>未開催</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="concert-slide">
+              <p class="concert-year">2020 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/No image.jpg" alt="説明"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>未開催</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <button class="slider-btn next-btn" aria-label="1年後へ">&#9654;</button>
+        </div>
+        <div class="slider-dots"></div>
+      </div>
+
+
+      <!-- ================================================================
+           Summer Concert
+           ================================================================ -->
+      <div class="concert-block" data-aos="fade-up">
+        <h2 class="concert-block-title">Summer Concert</h2>
+        <div class="concert-slider">
+          <button class="slider-btn prev-btn" aria-label="1年前へ">&#9664;</button>
+          <div class="concert-slides">
+
+            <div class="concert-slide active">
+              <p class="concert-year">2025 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Poster/2025Summer.jpg" alt="説明"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>音楽祭のプレリュード</li>
+                    <li>船乗りと海の歌</li>
+                    <li>地底都市「カッパドキア」－妖精の宿る不思議な岩－</li>
+                    <li>アンバー・ドリーム</li>
+                    <li>JIN-仁-Main Title</li>
+                    <li>SJ＆P_15</li>
+                    <li>ハリウッドマイルストーンズ</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="concert-slide">
+              <p class="concert-year">2024 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Poster/2024Summer.jpg" alt="説明"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>シーゲート序曲</li>
+					<li>交響詩「あんたがたどこさ」</li>
+					<li>落夏流穂</li>
+					<li>サンバ・エキスプレス</li>
+					<li>ピクサー・ムービー・マジック</li>
+					<li>ニュー・サウンズ・イン・ブラス第16集チュニジアの夜</li>
+					<li>スピリテッド・アウェイ「千と千尋の神隠し」より</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="concert-slide">
+              <p class="concert-year">2023 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Poster/2023Summer.jpg" alt="説明"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>序曲祝典</li>
+					<li>たなばた</li>
+					<li>落夏流穂</li>
+					<li>星の王子さま</li>
+					<li>カーニバルのマーチ</li>
+					<li>Back to the future</li>
+					<li>故郷の空 in Swing</li>
+					<li>交響組曲「シネマ・トリロジー」～スタジオジブリコレクション～第1楽章「Sky-Flight」</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="concert-slide">
+              <p class="concert-year">2022 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Poster/2022Summer.jpg" alt="説明"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>アルヴァマー序曲</li>
+					<li>シー・オブ・ウィズダム</li>
+					<li>シロクマ</li>
+					<li>over the rainbow</li>
+					<li>君の瞳に恋してる</li>
+					<li>ライオンキング・メドレー</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="concert-slide">
+              <p class="concert-year">2021 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Poster/2021Summer.jpg" alt="説明"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>未開催</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="concert-slide">
+              <p class="concert-year">2020 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Poster/2020Summer.jpg" alt="説明"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>未開催</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+			  
+			<div class="concert-slide">
+             <p class="concert-year">2019 年</p>
+             <div class="concert-content">
+              <div class="concert-slide-photo">
+                <img src="images/Poster/2019Summer.jpg" alt="説明"><!--ポスター画像-->
+              </div>
+              <div class="concert-program">
+                <p class="program-label">Program</p>
+                <ul class="program-list">
+                  <li>調査中</li>
+                </ul>
+              </div>
+             </div>
+           </div>
+
+          </div>
+          <button class="slider-btn next-btn" aria-label="1年後へ">&#9654;</button>
+        </div>
+        <div class="slider-dots"></div>
+      </div>
+
+
+      <!-- ================================================================
+           秋の西千葉駅前コンサート
+           ================================================================ -->
+      <div class="concert-block" data-aos="fade-up">
+        <h2 class="concert-block-title">秋の西千葉駅前コンサート</h2>
+        <div class="concert-slider">
+          <button class="slider-btn prev-btn" aria-label="1年前へ">&#9664;</button>
+          <div class="concert-slides">
+
+            <div class="concert-slide active">
+              <p class="concert-year">2025 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Poster/2025Akieki.jpg" alt="説明"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>Sing, Sing, Sing</li>
+                    <li>奏</li>
+                    <li>マイステーションマイタウン西千葉</li>
+                    <li>Monster</li>
+                    <li>ディズニーメドレーリターンズ</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="concert-slide">
+              <p class="concert-year">2024 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Comming soon.jpg" alt="説明"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>ファンタズミック！</li>
+					<li>私のお気に入り～My Favorite Things~</li>
+					<li>マイステーションマイタウン西千葉</li>
+					<li>RPG</li>
+					<li>魔女の宅急便コレクション</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="concert-slide">
+              <p class="concert-year">2023 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Poster/2023Akieki.jpg" alt="説明"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>小さな世界</li>
+					<li>平成アイドル・ダンス・コレクション</li>
+					<li>マイステーションマイタウン西千葉</li>
+					<li>ジェラート・コン・カフェ</li>
+					<li>サウンド・オブ・ミュージック・メドレー</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="concert-slide">
+              <p class="concert-year">2022 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Poster/2022Akieki.jpg" alt="説明"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>Paradise Has No Border</li>
+					<li>昭和アイドル・コレクション</li>
+					<li>マイステーションマイタウン西千葉</li>
+					<li>コンパス・オブ・ユア・ハート</li>
+					<li>J-pop Stage Vol.10【スタジオジブリ名曲集】</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="concert-slide">
+              <p class="concert-year">2021 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/No image.jpg" alt="説明"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>未開催</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="concert-slide">
+              <p class="concert-year">2020 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/No image.jpg" alt="説明"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>未開催</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+			  
+			<div class="concert-slide">
+              <p class="concert-year">2019 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Poster/2019Akieki.jpg" alt="説明"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>調査中</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <button class="slider-btn next-btn" aria-label="1年後へ">&#9654;</button>
+        </div>
+        <div class="slider-dots"></div>
+      </div>
+
+
+      <!-- ================================================================
+           千葉大祭
+           ================================================================ -->
+      <div class="concert-block" data-aos="fade-up">
+        <h2 class="concert-block-title">千葉大祭</h2>
+        <div class="concert-slider">
+          <button class="slider-btn prev-btn" aria-label="1年前へ">&#9664;</button>
+          <div class="concert-slides">
+
+            <div class="concert-slide active">
+              <p class="concert-year">2025 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Poster/2025Fes.JPG" alt="千葉大祭2025"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Bands</p>
+                  <ul class="program-list">
+                    <li>22 バンド</li>
+                    <li>ディズニーバンド</li>
+                    <li>ビッグバンド</li>
+                    <li>オケ編バンド</li>
+                    <li>ニコニコバンド</li>
+                    <li>25 バンド</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="concert-slide">
+              <p class="concert-year">2024 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Poster/2024Fes.jpg" alt="千葉大祭2024"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Bands</p>
+                  <ul class="program-list">
+                    <li>にほんいち（21バンド）</li>
+					<li>ニコニコバンド</li>
+					<li>ジブリバンド</li>
+					<li>映画バンド</li>
+					<li>ビッグバンド</li>
+					<li>にじバンド（24バンド）</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="concert-slide">
+              <p class="concert-year">2023 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Poster/2023Fes.jpg" alt="千葉大祭2023"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Bands</p>
+                  <ul class="program-list">
+                    <li>調査中</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="concert-slide">
+              <p class="concert-year">2022 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Comming soon.jpg" alt="未搭載"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Bands</p>
+                  <ul class="program-list">
+                    <li>調査中</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="concert-slide">
+              <p class="concert-year">2021 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Comming soon.jpg" alt="未搭載"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Bands</p>
+                  <ul class="program-list">
+                    <li>調査中</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="concert-slide">
+              <p class="concert-year">2020 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Comming soon.jpg" alt="未搭載"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Bands</p>
+                  <ul class="program-list">
+                    <li>調査中</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <button class="slider-btn next-btn" aria-label="1年後へ">&#9654;</button>
+        </div>
+        <div class="slider-dots"></div>
+      </div>
+
+
+      <!-- ================================================================
+           定期演奏会
+           ================================================================ -->
+      <div class="concert-block" data-aos="fade-up">
+        <h2 class="concert-block-title">定期演奏会</h2>
+        <div class="concert-slider">
+          <button class="slider-btn prev-btn" aria-label="1年前へ">&#9664;</button>
+          <div class="concert-slides">
+
+            <div class="concert-slide active">
+              <p class="concert-year">2025 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Poster/2025Regular.png" alt="定期演奏会2025"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>白鯨と旅路を共に</li>
+                    <li>ティル・ナ・ノーグ～幻影の島～</li>
+                    <li>蒼氓哀歌～三つの異なる表現で～</li>
+                    <li>Merry-Go-Round</li>
+                    <li>「ナイトメア・ビフォア・クリスマス」セレクション</li>
+                    <li>Catch That Sly Rabbit</li>
+                    <li>ポルコ・ロッソ映画「紅の豚」より</li>
+                    <li>吹奏楽のための交響曲「ワインダーク・シー」</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="concert-slide">
+              <p class="concert-year">2024 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Poster/2024Regular.jpg" alt="定期演奏会2024"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>トランセンデント・ジャーニー</li>
+					<li>森の贈り物</li>
+					<li>Mont Fuji(富士山)～北斎の版画に触発されて～</li>
+					<li>ある英雄の記憶「虹の国と氷の国」より</li>
+					<li>Get it on</li>
+					<li>三日月の舞</li>
+					<li>スター・ウォーズ　コンサートセレクション</li>
+					<li>イーストコーストの風景</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="concert-slide">
+              <p class="concert-year">2023 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Poster/2023Regular.jpg" alt="定期演奏会2023"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>SEDONA</li>
+					<li>マードックからの最後の手紙</li>
+					<li>エルカミーノレアル</li>
+					<li>ジングルベル in Swing</li>
+					<li>ラプソディー・イン・ブルー</li>
+					<li>交響組曲「ハリー・ポッター（賢者の石）」</li>
+					<li>パリのアメリカ人</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="concert-slide">
+              <p class="concert-year">2022 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Poster/2022Regular.jpg" alt="定期演奏会2022"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>カーテンアップ</li>
+					<li>River Dance</li>
+					<li>ラッキードラゴン～第五福竜丸の記憶～</li>
+					<li>Mr.インクレディブル</li>
+					<li>スーパーカリフラジリスティックエクスピアリドジャース</li>
+					<li>Xmas Swingin'コレクション</li>
+					<li>ウェスト・サイド・ストーリー・セレクション</li>
+					<li>交響詩「モンタニャールの詩」</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="concert-slide">
+              <p class="concert-year">2021 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Comming soon.jpg" alt="未搭載"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>そりすべり</li>
+					<li>River Dance</li>
+					<li>美女と野獣</li>
+					<li>Mr.インクレディブル</li>
+					<li>私のお気に入り</li>
+					<li>ミュージカル「レ・ミゼラブル」より</li>
+					<li>宇宙の音楽</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="concert-slide">
+              <p class="concert-year">2020 年</p>
+              <div class="concert-content">
+                <div class="concert-slide-photo">
+                  <img src="images/Poster/2020Regular.jpg" alt="定期演奏会2020"><!--ポスター画像-->
+                </div>
+                <div class="concert-program">
+                  <p class="program-label">Program</p>
+                  <ul class="program-list">
+                    <li>未開催</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <button class="slider-btn next-btn" aria-label="1年後へ">&#9654;</button>
+        </div>
+        <div class="slider-dots"></div>
+      </div>
+
+    </div>
+  </main><!--メインコンテンツ終わり-->
+	
+	
+
+ <!--フッターの部分（全ページ共通）-->
+<footer class="site-footer">
+  <p class="footer-name">千葉大学吹奏楽団</p><!--中央のタイトル-->
+  <div class="footer-links">
+	  <a href="https://www.instagram.com/cuwo_official" target="_blank" class="footer-btn">Instagram</a> <!--インスタに飛べるボタン-->
+	  <a href="https://twitter.com/c_u_w_o" target="_blank" class="footer-btn">X（旧 Twitter）</a> <!--Xに飛べるボタン-->
+　</div>
+  <nav class="footer-nav"> <!--各ページに飛ぶボタン-->
+	  <a href="index.html">ホーム</a>
+	  <a href="news.html">過去のお知らせ</a>
+	  <a href="about.html">楽団紹介</a> 
+	  <a href="events.html">年間行事</a> 
+	  <a href="concerts.html">過去の演奏会</a> 
+	  <a href="contact.html">お問い合わせ</a>  
+	</nav>
+　<p class="footer-right">Copyright © Chiba University Wind Orchestra  All Rights Reserved.s</p><!--権利情報記載-->
+</footer><!--フッターの部分終わり-->
+	
+	
+      <!-- ================================================================
+           ここから下は各年を横にスライドする機能と横の三角のボタン、下のドットを表示させるプログラムが書いてある
+           ================================================================ -->
+	
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({ duration: 700, once: true, offset: 60, easing: 'ease-out-cubic' });
+
+    // ================================================================
+    // スライダー
+    // スライドの並び順: index 0 = 最新年、index 末尾 = 最古年
+    // ◀ = 1年前（古い年、index を増やす方向）
+    // ▶ = 1年後（新しい年、index を減らす方向）
+    //
+    // ドット: 常に最大5個表示。現在地が中心になるよう動く。
+    //   中心(現在地) → dot-lg（大）
+    //   隣           → dot-md（中）
+    //   2つ隣        → dot-sm（小）
+    //   3つ以上離れ  → dot-xs（極小）※端に来たときのみ表示
+    // ================================================================
+    document.querySelectorAll('.concert-block').forEach(function(block) {
+      var slides   = block.querySelectorAll('.concert-slide');
+      var prevBtn  = block.querySelector('.prev-btn');
+      var nextBtn  = block.querySelector('.next-btn');
+      var dotsWrap = block.querySelector('.slider-dots');
+      var total    = slides.length;
+      var current  = 0; // 0 = 最新年
+
+      // ドットを total 個生成（表示/非表示・サイズはupdateDots()で制御）
+      // 並び: 左端=最古年(total-1)、右端=最新年(0)
+      for (var i = total - 1; i >= 0; i--) {
+        (function(idx) {
+          var dot = document.createElement('button');
+          dot.className = 'slider-dot';
+          dot.setAttribute('data-idx', idx); // このドットが対応するスライドindex
+          dot.addEventListener('click', function() {
+            var dir = (idx > current) ? 'prev' : 'next';
+            goTo(idx, dir);
+          });
+          dotsWrap.appendChild(dot);
+        })(i);
+      }
+      var dots = dotsWrap.querySelectorAll('.slider-dot');
+
+      // slides の index → dots の index への変換
+      // slides[0]=最新=右端ドット、slides[末尾]=最古=左端ドット
+      function dotIndex(slideIdx) {
+        return total - 1 - slideIdx;
+      }
+
+      // ドットの表示を更新（スライディングウィンドウ型・最大5個）
+      function updateDots() {
+        var VISIBLE = 5; // 表示するドットの最大数
+        var half    = Math.floor(VISIBLE / 2); // 中心から両側に見せる数 = 2
+
+        // 表示ウィンドウの中心をcurrentに合わせる（端では固定）
+        var winCenter = dotIndex(current); // 現在地のdotIndex
+        var winStart  = Math.max(0, Math.min(winCenter - half, total - VISIBLE));
+        var winEnd    = Math.min(total - 1, winStart + VISIBLE - 1);
+
+        dots.forEach(function(dot, di) {
+          var dist = Math.abs(di - winCenter); // 現在地ドットからの距離
+
+          if (di < winStart || di > winEnd) {
+            // ウィンドウ外 → 非表示
+            dot.style.display = 'none';
+          } else {
+            dot.style.display = '';
+            // 距離に応じてサイズクラスを付与
+            dot.classList.remove('dot-lg', 'dot-md', 'dot-sm', 'dot-xs', 'active');
+            if (dist === 0)      { dot.classList.add('dot-lg', 'active'); }
+            else if (dist === 1) { dot.classList.add('dot-md'); }
+            else if (dist === 2) { dot.classList.add('dot-sm'); }
+            else                 { dot.classList.add('dot-xs'); }
+          }
+        });
+      }
+
+      function goTo(index, direction) {
+        slides[current].classList.remove('active', 'slide-in-left', 'slide-in-right');
+        current = index;
+        var animClass = (direction === 'prev') ? 'slide-in-left' : 'slide-in-right';
+        slides[current].classList.add('active', animClass);
+        updateDots();
+        updateButtons();
+      }
+
+      function updateButtons() {
+        prevBtn.disabled = (current === total - 1);
+        nextBtn.disabled = (current === 0);
+      }
+
+      prevBtn.addEventListener('click', function() {
+        if (current < total - 1) goTo(current + 1, 'prev');
+      });
+
+      nextBtn.addEventListener('click', function() {
+        if (current > 0) goTo(current - 1, 'next');
+      });
+
+      // 初期化
+      updateDots();
+      updateButtons();
+    });
+  </script>
+
+</body>
+</html>
