@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja"><!--このホームページは日本語ですよという意味-->
+<head><!--ホームページの前提設定が色々書いてある。-->
+<meta charset="UTF-8"><!--文字コードの指定、これがないと文字化けする-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><!--スマホで見たときの画面サイズ調整-->
+<title>千葉大学吹奏楽団</title><!--ホームページそのもののタイトル-->
+<link rel="preconnect" href="https://fonts.googleapis.com"><!--フォントを読み込む準備をしている-->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><!--こっちもフォントを読み込む準備をしている-->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet"><!--フォントの読み込みを行っている-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"><!--AOSというアニメーションライブラリのCSSをインターネットから読み込む-->
+<link rel="stylesheet" href="style.css"><!--同じフォルダ内にあるStyle.cssファイルを読み込んでいる-->
+</head>
+
+	
+<!--ここからがメインのホームページの中身-->
+<body>
+<!--ヘッダーの部分（全ページ共通）-->
+<header class="site-nav">
+  <div class="container"> 
+	  <a href="index.html" class="nav-logo"> <!--左上のところ-->
+		  <img src="images/logo.png" alt="千葉大学吹奏楽団ロゴ" onerror="this.style.display='none'">
+    <div class="nav-logo-text"> 
+		<span class="name-ja">千葉大学吹奏楽団</span> 
+		<span class="name-en">Chiba University Wind Orchestra</span></div>
+    </a>
+    <nav class="nav-links"> <!--右上の各ページへ飛ぶボタン-->
+		<a href="about.html">♪楽団紹介</a> 
+		<a href="events.html">♪年間行事</a> 
+		<a href="concerts.html">♪過去の演奏会</a> 
+		<a href="contact.html">♪お問い合わせ</a> 
+	</nav>
+  </div>
+</header><!--ヘッダーの部分終わり-->
+
+	
+<!-- ヒーロー（ホームページの表紙） -->
+<section class="hero">
+  <div class="container">
+  <div class="hero-photos-left"><!--左側の写真-->
+      <div class="hero-photo-lg" data-aos="fade-right" data-aos-delay="100"><!--左上の写真-->
+		<img src="images/Regular2025 All.JPG" alt="左上の写真" ></div>
+      <div class="hero-photo-sm" data-aos="fade-right" data-aos-delay="200"><!--左下の写真-->
+		<img src="images/Fresh 2026 1.jpg" alt="左下の写真" ></div>
+    </div>
+    <div class="hero-center" data-aos="fade-up"><!--中央のタイトルたち-->
+      <p class="hero-since">Since 1980</p>
+      <p class="hero-univ">Chiba University</p>
+      <h1 class="hero-title">Wind<br>
+        Orchestra</h1>
+      <p class="hero-name-ja">千葉大学吹奏楽団</p>
+    </div>
+    <div class="hero-photos-right"><!--右側の写真-->
+      <div class="hero-photo-lg" data-aos="fade-left" data-aos-delay="100"><!--右上の写真-->
+		<img src="images/Spring2026 All.jpg" alt="右上の写真" ></div>
+      <div class="hero-photo-lglg" data-aos="fade-left" data-aos-delay="200"><!--右下の写真-->
+		<img src="images/Regular2025 1.JPG" alt="右下の写真" ></div>
+    </div>
+  </div>
+</section><!--ヒーローのセクションここまで-->
+	
+	
+<main class="page-content">
+  <div class="container"> 
+    
+    <!-- お知らせ --> 
+    <!-- 追加・編集：<li class="news-item"> をコピーして増やしてください -->
+    <section class="section-news" data-aos="fade-up">
+      <h2 class="section-heading">お知らせ</h2>
+		<ul class="news-list"><!--ここから</ul>までの間に新しいニュースを入れる-->
+		  
+         <li class="news-item">
+          <a href="news.html" class="news-link">
+            <span class="news-date">2026.09.1</span><!--お知らせの日付-->
+            <span class="news-text">ホームページを新しくしました！</span><!--お知らせの内容-->
+          </a>
+        </li>
+		  
+        <li class="news-item">
+          <a href="news.html" class="news-link">
+            <span class="news-date">2026.08.30</span>
+            <span class="news-text">サマーコンサートを実施しました</span>
+          </a>
+        </li>
+        <!-- ここにお知らせを追加 -->
+      </ul>
+
+    </section><!--お知らせのセクション終わり-->
+    
+    <!-- 次回の演奏会 --> 
+    <!-- 回数・タイトルを書き換えてください -->
+    <section class="section-next-concert" data-aos="fade-up">
+      <h2 class="section-heading">次回の演奏会</h2>
+      <div class="next-concert-inner">
+        <div class="concert-poster"> 
+          <img src="images/Poster/2026Summer.jpg" alt="次回の演奏会のポスター画像"><!-- ポスター画像はこの下の""の中に場所/ファイル名を入れる-->
+        </div>
+        <div class="concert-info">
+          <p class="concert-number">第 29 回</p><!--コンサートの回数-->
+          <p class="concert-name">Summer Concert</p><!--コンサートの名称-->
+	      <p class="concert-day">8月30日（日）</p><!--コンサートの日付-->
+          <div class="concert-link-wrap"> 
+		    <a href="concerts.html" class="btn">過去の演奏会
+			</a> 
+		  </div><!--過去の演奏会のページに飛ぶボタン-->
+        </div>
+      </div>
+    </section><!--次回の演奏会のセクション終わり-->
+  </div>
+</main>
+	
+	
+<!--フッターの部分（全ページ共通）-->
+<footer class="site-footer">
+  <p class="footer-name">千葉大学吹奏楽団</p><!--中央のタイトル-->
+  <div class="footer-links">
+	  <a href="https://www.instagram.com/cuwo_official" target="_blank" class="footer-btn">Instagram</a> <!--インスタに飛べるボタン-->
+	  <a href="https://twitter.com/c_u_w_o" target="_blank" class="footer-btn">X（旧 Twitter）</a> <!--Xに飛べるボタン-->
+　</div>
+  <nav class="footer-nav"> <!--各ページに飛ぶボタン-->
+	  <a href="index.html">ホーム</a> 
+	  <a href="news.html">過去のお知らせ</a>
+	  <a href="about.html">楽団紹介</a> 
+	  <a href="events.html">年間行事</a> 
+	  <a href="concerts.html">過去の演奏会</a> 
+	  <a href="contact.html">お問い合わせ</a> 
+	</nav>
+　<p class="footer-right">Copyright © Chiba University Wind Orchestra  All Rights Reserved.s</p><!--権利情報記載-->
+</footer><!--フッターの部分終わり-->
+	
+	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script> 
+<script>AOS.init({ duration: 700, once: true, offset: 60, easing: 'ease-out-cubic' });</script>
+	
+</body>
+	
+</html>
